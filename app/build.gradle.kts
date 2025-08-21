@@ -44,6 +44,7 @@ android {
             resValue("mipmap", "app_icon_round", "@mipmap/ic_launcher_round")
             resValue("string", "app_name", "@string/app_name_release")
             proguardFile("proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("debug")
         }
         debug {
             resValue("mipmap", "app_icon", "@mipmap/ic_launcher_debug")
