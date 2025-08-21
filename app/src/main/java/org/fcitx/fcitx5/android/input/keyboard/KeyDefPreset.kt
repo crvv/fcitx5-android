@@ -43,13 +43,16 @@ class AlphabetKey(
     val character: String,
     val punctuation: String,
     variant: Variant = Variant.Normal,
-    popup: Array<Popup>? = null
+    popup: Array<Popup>? = null,
+    percentWidth: Float = 0.1f,
+    hideText: Boolean = false
 ) : KeyDef(
     Appearance.AltText(
-        displayText = character,
-        altText = punctuation,
+        displayText = if (hideText) "" else character,
+        altText = if (hideText) "" else punctuation,
         textSize = 23f,
-        variant = variant
+        variant = variant,
+        percentWidth = percentWidth
     ),
     setOf(
         Behavior.Press(KeyAction.FcitxKeyAction(character)),
@@ -97,7 +100,7 @@ class CapsKey : KeyDef(
     Appearance.Image(
         src = R.drawable.ic_capslock_none,
         viewId = R.id.button_caps,
-        percentWidth = 0.15f,
+        percentWidth = 0.1f,
         variant = Variant.Alternative
     ),
     setOf(
@@ -126,7 +129,7 @@ class LayoutSwitchKey(
 )
 
 class BackspaceKey(
-    percentWidth: Float = 0.15f,
+    percentWidth: Float = 0.2f,
     variant: Variant = Variant.Alternative
 ) : KeyDef(
     Appearance.Image(
