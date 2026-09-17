@@ -56,7 +56,6 @@ class TextKeyboard(
                 AlphabetKey("P", "+")
             ),
             listOf(
-                AlphabetKey("A", "×", percentWidth = 0.05f, hideText = true),
                 AlphabetKey("A", "×"),
                 AlphabetKey("S", "÷"),
                 AlphabetKey("D", "−"),
@@ -65,8 +64,7 @@ class TextKeyboard(
                 AlphabetKey("H", "\""),
                 AlphabetKey("J", "'"),
                 AlphabetKey("K", "{"),
-                AlphabetKey("L", "}"),
-                AlphabetKey("L", "}", percentWidth = 0.05f, hideText = true)
+                AlphabetKey("L", "}")
             ),
             listOf(
                 CapsKey(),
@@ -77,7 +75,7 @@ class TextKeyboard(
                 AlphabetKey("B", "."),
                 AlphabetKey("N", "?"),
                 AlphabetKey("M", "/"),
-                BackspaceKey()
+                BackspaceKey(percentWidth = 0.2f)
             ),
             listOf(
                 LayoutSwitchKey("?123", ""),
